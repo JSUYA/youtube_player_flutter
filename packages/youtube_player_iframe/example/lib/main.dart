@@ -97,7 +97,7 @@ class _YoutubeAppDemoState extends State<YoutubeAppDemo> {
           ),
           body: LayoutBuilder(
             builder: (context, constraints) {
-              if (kIsWeb && constraints.maxWidth > 750) {
+              if (constraints.maxWidth > 750) {
                 return Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
