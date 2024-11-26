@@ -57,7 +57,7 @@
           playerVars: <<playerVars>>,
           events: {
             onReady: function (event) {
-              handleFullScreenForMobilePlatform();
+              //handleFullScreenForMobilePlatform();
               sendMessage('Ready', event);
             },
             onStateChange: function (event) {
@@ -127,6 +127,9 @@
              break;
            case 'web':
              window.parent.postMessage(message, '*');
+             break;
+           default:
+             <<playerId>>.postMessage(message, '*');
              break;
          }
       }

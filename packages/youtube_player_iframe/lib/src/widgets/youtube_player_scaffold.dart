@@ -105,7 +105,7 @@ class _YoutubePlayerScaffoldState extends State<YoutubePlayerScaffold> {
         aspectRatio: widget.aspectRatio,
         gestureRecognizers: widget.gestureRecognizers,
         enableFullScreenOnVerticalDrag: widget.enableFullScreenOnVerticalDrag,
-        backgroundColor: widget.backgroundColor,
+        backgroundColor: Colors.transparent, //widget.backgroundColor,
       ),
     );
 

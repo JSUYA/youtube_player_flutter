@@ -58,8 +58,8 @@ class YoutubePlayerController implements YoutubePlayerIFrameAPI {
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..setNavigationDelegate(navigationDelegate)
       ..setUserAgent(params.userAgent)
-      ..addJavaScriptChannel(playerId, onMessageReceived: _eventHandler.call)
-      ..enableZoom(false);
+      ..addJavaScriptChannel(playerId, onMessageReceived: _eventHandler.call);
+    // ..enableZoom(false);
 
     final webViewPlatform = webViewController.platform;
     if (webViewPlatform is AndroidWebViewController) {
@@ -649,7 +649,8 @@ class YoutubePlayerController implements YoutubePlayerIFrameAPI {
       featureName = params['feature'];
     } else if (path == '/watch') {
       featureName = 'emb_info';
-    } else if (defaultTargetPlatform == TargetPlatform.iOS) {
+    } else if (defaultTargetPlatform == TargetPlatform.iOS ||
+        defaultTargetPlatform == TargetPlatform.linux) {
       return NavigationDecision.navigate;
     }
 

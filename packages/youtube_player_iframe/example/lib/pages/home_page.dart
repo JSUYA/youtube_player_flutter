@@ -75,13 +75,15 @@ class _HomePageState extends State<HomePage> {
       controller: _controller,
       builder: (context, player) {
         return Scaffold(
+          backgroundColor: Colors.transparent,
           appBar: AppBar(
+            backgroundColor: Colors.transparent,
             title: const Text('Youtube Player IFrame Demo'),
             actions: const [VideoPlaylistIconButton()],
           ),
           body: LayoutBuilder(
             builder: (context, constraints) {
-              if (kIsWeb && constraints.maxWidth > 750) {
+              if (constraints.maxWidth > 750) {
                 return Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
